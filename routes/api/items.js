@@ -33,6 +33,8 @@ router.post('/', auth, async (req, res) => {
     name: req.body.name
   });
 
+  /* newItem.save().then(item => res.json(item)); */
+
   try {
     const item = await newItem.save();
     if (!item) throw Error('Something went wrong saving the item');
